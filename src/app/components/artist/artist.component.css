@@ -1,0 +1,20 @@
+button {
+    position: absolute;
+    top: 60px;
+}
+
+img {
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+}
+
+.main-photo {
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+}
+
+.second {
+    margin-top: 50px;
+}

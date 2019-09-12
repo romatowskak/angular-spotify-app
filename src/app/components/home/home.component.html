@@ -1,0 +1,10 @@
+<loading *ngIf="loading"></loading>
+
+<div *ngIf="error" class="alert alert-danger animated fadeIn">
+    <h3>Error</h3>
+    <p>
+        {{ errorMessage }}
+    </p>
+</div>
+
+<card [items]="newSongs"></card>

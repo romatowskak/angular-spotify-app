@@ -1,0 +1,48 @@
+<loading *ngIf="loadingArtist"></loading>
+
+<div class="row" *ngIf="!loadingArtist">
+    <div class="col-2">
+        <img [src]="artist.images | noimage" class="img-responsive" />
+    </div>
+    <div class="col">
+        <h3>{{ artist.name }}</h3>
+        <p>
+            <a target="_blank">
+                <button class="btn btn-outline-success">See the artist's page</button>
+            </a>
+        </p>
+    </div>
+
+    <div class="col-4" [routerLink]="['/search']">
+        <button class="btn btn-outline-danger">Go back</button>
+    </div>
+</div>
+
+<div class="row second">
+    <div class="col">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Photo</th>
+                    <th>Album</th>
+                    <th>Song</th>
+                    <th>Preview</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let track of topTracks">
+                    <td>
+                        <img [src]="track.album.images | noimage" class="img-responsive  main-photo" />
+                    </td>
+                    <td>{{ track.album.name }}</td>
+                    <td>{{ track.name }}</td>
+                    <td>
+                        <iframe [src]="track.uri | preview" width="300" height="90" frameborder="0" allowtransparency="true" allow="encryped-media">
+            </iframe>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
